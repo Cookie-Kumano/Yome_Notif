@@ -1,0 +1,59 @@
+﻿<Window x:Class="YomeNotif.NotifWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YomeNotif"
+        mc:Ignorable="d"
+        Title="NotifWindow" Height="128" Width="380" Topmost="true" AllowsTransparency="True" WindowStyle ="None"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        Style="{DynamicResource  DefaultWindowStyle}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+            CornerRadius="0" GlassFrameThickness="-2" ResizeBorderThickness="0" UseAeroCaptionButtons="False" CaptionHeight="{DynamicResource CaptionHeight}" />
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <System:Double x:Key="CaptionHeight">0</System:Double>
+        <Style TargetType="{x:Type Window}" x:Key="DefaultWindowStyle">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <!-- 背景の色：灰色 -->
+            <Setter x:Name="BGColor" Property="Background" Value="#E0494949"/>
+            
+            <!-- 枠線の色：青色 -->
+            <Setter x:Name="BorderColor" Property="BorderBrush" Value="#E014A9FF"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            
+            <!-- 手前の色 -->
+            <Setter x:Name="FGColor" Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False" HorizontalAlignment="Right">
+            <Button x:Name="CloseButton" Content="✕" Width="24" Height="24" HorizontalAlignment="Right" Foreground="#FFE0E0E0" Margin="0,0,4,0" Click="CloseButton_Click" FontSize="14">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+
+            </Button>
+        </DockPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Orientation="Horizontal" Grid.RowSpan="2" Width="360" Height="108" >
+            <Border Width="64" Height="64" CornerRadius="8" Margin="8">
+                <Border.Background>
+                    <ImageBrush x:Name="ImageView" Stretch="Fill" />
+                </Border.Background>
+            </Border>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,8,0" Height="108" Width="280">
+                <TextBlock x:Name="NameView" FontWeight="Bold" FontSize="24" Text="Title" Margin="0,16,0,4" />
+                <TextBlock x:Name="TextView" FontSize="14" Text="Contents" Padding="4,0,0,0" TextWrapping="Wrap" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

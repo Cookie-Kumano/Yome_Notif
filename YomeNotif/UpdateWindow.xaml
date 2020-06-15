@@ -1,0 +1,24 @@
+﻿<Window x:Class="YomeNotif.UpdateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YomeNotif"
+        mc:Ignorable="d"
+        Title="更新" Height="256" Width="512"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Height="184" Margin="0" VerticalAlignment="Center" Width="486">
+            <Label Content="名前を入力" FontSize="14"/>
+            <TextBox x:Name="NameInput" Height="36" TextWrapping="Wrap" VerticalContentAlignment="Center" Padding="4" Margin="8,4,8,8"/>
+            <Label Content="画像ファイルを選択" FontSize="14"/>
+            <StackPanel Height="32" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="474" Margin="4,0,0,0">
+                <Button x:Name="ImgButton" Content="ファイルを選択" Width="128" Margin="4" Click="ImgButton_Click"/>
+                <Label x:Name="PathView" Content="..." />
+            </StackPanel>
+            <Button x:Name="SubmitButton" Click="SubmitButton_Click" Content="決定" Margin="8" Height="32" FontSize="14"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
