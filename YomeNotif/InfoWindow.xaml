@@ -12,7 +12,7 @@
             <Image Source="sd_kumano_02.png" Width="180" Height="180" />
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="180" >
                 <Image Source="ロゴ.png" Width="128" HorizontalAlignment="Left" Margin="0,8" />
-                <TextBlock x:Name="Title" Text="嫁時報アプリ" FontSize="24" FontFamily="Meiryo UI" FontWeight="Bold" Padding="0,8" Foreground="#FF424242" />
+                <TextBlock x:Name="TitleView" Text="嫁時報アプリ" FontSize="24" FontFamily="Meiryo UI" FontWeight="Bold" Padding="0,8" Foreground="#FF424242" />
                 <TextBlock x:Name="Version" Text="version" FontFamily="Arial" Foreground="#FF616161"/>
                 <Rectangle Height="75" />
                 <TextBlock x:Name="Copyright" FontFamily="Arial" Text="CopyRight" FontSize="10" Foreground="#FF616161"/>

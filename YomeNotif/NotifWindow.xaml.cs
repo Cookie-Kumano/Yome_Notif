@@ -1,23 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Shell;
 
 namespace YomeNotif
 {
@@ -26,13 +12,14 @@ namespace YomeNotif
     /// </summary>
     public partial class NotifWindow : Window
     {
-        System.Timers.Timer timer = new System.Timers.Timer();
+        Timer timer = new Timer();
 
         public NotifWindow(string[] data)
         {
             InitializeComponent();
 
-            var desktop = System.Windows.SystemParameters.WorkArea;
+            // 画面右下に表示させる
+            var desktop = SystemParameters.WorkArea;
             this.Left = desktop.Right - (this.Width + 8);
             this.Top = desktop.Bottom - (this.Height + 8);
 
@@ -45,23 +32,29 @@ namespace YomeNotif
         {
             var bc = new BrushConverter();
 
+            // カラーテーマによって色を変える
             if (GetAppsUseLightTheme() == 1)
             {
                 Background = (Brush)bc.ConvertFrom("#E0F5F5F5");
                 BorderBrush = (Brush)bc.ConvertFrom("#E0E53935");
                 Foreground = (Brush)bc.ConvertFrom("#FF212121");
                 CloseButton.Foreground = (Brush)bc.ConvertFrom("#FF424242");
+                TimeView.Foreground = (Brush)bc.ConvertFrom("#FF616161");
             }
         }
 
         public void notifFire(string ImageFile, string Name, string Text)
         {
+            // UIを組み立てる
             if (File.Exists(ImageFile))
                 ImageView.ImageSource = new BitmapImage(new Uri(ImageFile));
             NameView.Text = Name;
             TextView.Text = Text;
 
-            timer = new System.Timers.Timer();
+            DateTime dt = DateTime.Now;
+            TimeView.Text = dt.ToString("HH:mm");
+
+            timer = new Timer();
             timer.AutoReset = false;
             timer.Interval = 6000;
             timer.Elapsed += Timer_Elapsed;

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("%e3%83%ad%e3%82%b4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sd_kumano_02.ico")]
 
 

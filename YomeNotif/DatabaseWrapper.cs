@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
-using System.Xml.Resolvers;
 
 namespace YomeNotif
 {
@@ -31,8 +26,8 @@ namespace YomeNotif
                         new XElement("ID", "1"),
                         new XElement("Name", "熊野"),
                         new XElement("Image", "kumano.jpg"),
-                        new XElement("Voices", ""),
-                        new XElement("Text", "")
+                        new XElement("Voices", ",,,,,,,,,,,,,,,,,,,,,,,"),
+                        new XElement("Text", "深夜0時ですわ。,1時よ。お肌に悪いわ……熊野の美貌に対する挑戦なの？,提督？　いつまで起きていらっしゃるの？　2時よ。,深夜3時ですって！？　ありえませんわ！,深夜4時よ。付き合ってられませんわ。,もぉーっ……！　深夜っていうか……朝5時ですわ！,6時よ。ちゃんと目をお開けなさいな。,7時になりましてよ。提督のおかげで、寝不足でしてよ……？,8時ですわ。私の髪、梳くってくださる？,もう9時よ。遅刻でなくって？,あら、今日は何もありませんの？　10時ですのに……,11時。仕方ないので、付き合ってあげますわ。,12時。わたくし、ランチにはサンドイッチを所望しますわ。,提督？　わたくし「こんびに」とやらのサンドイッチ、初めていただきましたわ。意外にいけるんですのね。あぁ、13時ですわ。,14時よ。食事の後は仮眠をとりますの。では、ごきげんよう。提督。,15時ね。仮眠の後はスッキリするので、勉強も仕事も、艦これも。効率が良いと言われているわ。,提督、16時ですわ。熱心に、何を見てらっしゃいますの？,17時。熊野はエステの予約がありますの。そろそろ失礼させてもらっていいかしら？,18時。わたくし、エステ中でしてよ、提督。遠慮してくださるかしら。,19時ね。……はぁ、気持ちよかった。あぁ。提督、いらしたの？,提督、20時よ。ローズヒップティーでも、ご一緒にいかが？,21時になりましたわ。遅めのディナーも、よろしいんじゃなくて？,22時。私、美容のため仮眠いただきますわ。,23時です、提督。夜はこれから、どうされるのかしら。")
                         )));
             // xmlファイルの書き込み。
             XDoc.Save(directoryPath + @"\YomeNotif\YomeDB.xml");

@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
-using System.Windows.Threading;
 using System.Xml.Linq;
 
 namespace YomeNotif
@@ -17,7 +12,7 @@ namespace YomeNotif
     public partial class NotifyIconWrapper : Component
     {
 
-        private System.Timers.Timer timer;
+        private Timer timer;
         private int hour = 0;
 
         string _image;
@@ -48,7 +43,6 @@ namespace YomeNotif
                 notifyIcon1.ShowBalloonTip(3000);
             }
 
-
             TimerWrapper();
         }
 
@@ -69,10 +63,10 @@ namespace YomeNotif
             TimeSpan ts = dt2 - dt;
 
             // タイマ設定
-            timer = new System.Timers.Timer();
+            timer = new Timer();
             timer.AutoReset = false;
-            //timer.Interval = ts.TotalMilliseconds;
-            timer.Interval = 6000;
+            timer.Interval = ts.TotalMilliseconds;
+            // timer.Interval = 6000;
             timer.Elapsed += Timer_Elapsed;
             timer.Enabled = true;
 
@@ -132,7 +126,7 @@ namespace YomeNotif
                 );
 
                 // 音声再生が有効で、且つ音声ファイルが存在する場合のみ実行
-                if (Properties.Settings.Default.Voice && File.Exists(Voices[hour])) ;
+                if (Properties.Settings.Default.Voice && File.Exists(Voices[hour]))
                 {
                     Microsoft.SmallBasic.Library.Sound.PlayChime();
                     Microsoft.SmallBasic.Library.Sound.PlayAndWait(Voices[hour]);

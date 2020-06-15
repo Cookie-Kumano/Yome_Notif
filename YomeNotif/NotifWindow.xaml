@@ -50,8 +50,9 @@
                     <ImageBrush x:Name="ImageView" Stretch="Fill" />
                 </Border.Background>
             </Border>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,8,0" Height="108" Width="280">
-                <TextBlock x:Name="NameView" FontWeight="Bold" FontSize="24" Text="Title" Margin="0,16,0,4" />
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,18,8,0" Width="280">
+                <TextBlock x:Name="NameView" FontWeight="Bold" FontSize="24" Text="Title" Margin="0" />
+                <TextBlock x:Name="TimeView" FontSize="10" Text="00:00" Margin="0,2,0,0" Foreground="#FFE0E0E0" Padding="4,0,0,0" />
                 <TextBlock x:Name="TextView" FontSize="14" Text="Contents" Padding="4,0,0,0" TextWrapping="Wrap" />
             </StackPanel>
         </StackPanel>

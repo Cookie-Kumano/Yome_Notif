@@ -1,24 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data;
-using System.Data.Linq;
-using IO = System.IO;
-using System.Diagnostics;
 using System.Collections.ObjectModel;
-using YomeNotif.Properties;
 using Microsoft.Win32;
+using System.Linq;
 
 namespace YomeNotif
 {
@@ -125,8 +110,10 @@ namespace YomeNotif
                 voicefilePath = dialog.FileName;
                 VoiceLink.Text = voicefilePath;
                 if (!SubmitNotifList("Voices", voicefilePath))
-                    VoiceLink.Text = "";
+                    VoiceLink.Text = Zihodata[selectedTime, 0];
             }
+            else
+                ZihoSetSucceed.Visibility = Visibility.Hidden;
         }
 
         // テキスト変更ボタンクリック時
@@ -134,7 +121,7 @@ namespace YomeNotif
         {
             string setText = TextEditBox.Text;
             if (!SubmitNotifList("Text", setText))
-                TextEditBox.Text = "";
+                TextEditBox.Text = Zihodata[selectedTime, 1];
         }
 
         // 音声・テキストの保存処理
@@ -159,7 +146,8 @@ namespace YomeNotif
                         Zihodata[Ziho_List.SelectedIndex, 1] = data;
                     if (objDB.SetYomeList(DtoData.Name, Zihodata))
                     {
-                        MessageBox.Show("登録に成功しました。", "成功", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ZihoSetSucceed.Text = msgstring + "の変更を保存しました";
+                        ZihoSetSucceed.Visibility = Visibility.Visible;
                         return true;
                     }
                     else
@@ -170,6 +158,7 @@ namespace YomeNotif
                 }
                 else
                 {
+                    ZihoSetSucceed.Visibility = Visibility.Hidden;
                     return false;
                 }
             }
@@ -209,6 +198,7 @@ namespace YomeNotif
                 TextEditBox.IsEnabled = false;
                 TextEditButton.IsEnabled = false;
             }
+            ZihoSetSucceed.Visibility = Visibility.Hidden;
         }
 
         // 時報設定の選択時間が変わったときの処理。
@@ -233,6 +223,7 @@ namespace YomeNotif
                 TextEditBox.IsEnabled = false;
                 TextEditButton.IsEnabled = false;
             }
+            ZihoSetSucceed.Visibility = Visibility.Hidden;
         }
 
         // データベース照会処理。
@@ -250,14 +241,8 @@ namespace YomeNotif
         // 設定ボタンクリック時
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            var DtoData = (Dto)Yome_List.SelectedItem;
-            string[] data = { "", "", "" };
-            if (DtoData != null)
-            {
-                data[0] = DtoData.FileName;
-                data[1] = DtoData.Name;
-                data[2] = Zihodata[0, 1];
-            }
+            string[] data = { _dtos.First().FileName, _dtos.First().Name, "TEST" };
+
             var f = new SettingsWindow(data);
             f.Show();
         }

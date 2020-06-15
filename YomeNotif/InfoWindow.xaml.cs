@@ -32,7 +32,7 @@ namespace YomeNotif
                                                                 typeof(AssemblyTitleAttribute));
             var asmCopyright = (AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(assembly,
                                                                 typeof(AssemblyCopyrightAttribute));
-            Title.Text = asmTitle.Title.ToString();
+            TitleView.Text = asmTitle.Title.ToString();
             Version.Text = "Version: "+ version.ToString();
             Copyright.Text = asmCopyright.Copyright.ToString();
         }
