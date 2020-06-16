@@ -241,7 +241,7 @@ namespace YomeNotif
         // 設定ボタンクリック時
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] data = { _dtos.First().FileName, _dtos.First().Name, "TEST" };
+            string[] data = { _dtos.First().FileName, _dtos.First().Name, "TEST\nTEST\nTEST\nTEST\nTEST" };
 
             var f = new SettingsWindow(data);
             f.Show();

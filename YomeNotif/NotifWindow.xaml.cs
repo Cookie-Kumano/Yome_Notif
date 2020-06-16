@@ -18,13 +18,14 @@ namespace YomeNotif
         {
             InitializeComponent();
 
+            SizeToContent = SizeToContent.Height;
+
             // 画面右下に表示させる
             var desktop = SystemParameters.WorkArea;
             this.Left = desktop.Right - (this.Width + 8);
             this.Top = desktop.Bottom - (this.Height + 8);
 
             setwindow();
-
             notifFire(data[0], data[1], data[2]);
         }
 
@@ -104,6 +105,15 @@ namespace YomeNotif
         {
             GC.Collect();
             this.Close();
+        }
+
+        private void WindowSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // 画面右下に表示させる
+            var desktop = SystemParameters.WorkArea;
+            this.Left = desktop.Right - (this.Width + 8);
+            this.Top = desktop.Bottom - (ActualHeight + 8);
+            Console.WriteLine("初期値: " + this.Height + "\n変更後: " + this.ActualHeight);
         }
     }
 }
