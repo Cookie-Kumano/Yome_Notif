@@ -35,6 +35,12 @@ namespace YomeNotif
             TitleView.Text = asmTitle.Title.ToString();
             Version.Text = "Version: "+ version.ToString();
             Copyright.Text = asmCopyright.Copyright.ToString();
+
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Uri.ToString());
         }
     }
 }

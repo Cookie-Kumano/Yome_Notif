@@ -5,19 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YomeNotif"
         mc:Ignorable="d"
-        Title="このアプリについて" Height="280" Width="420"
+        Title="このアプリについて" Height="280" Width="480"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="sd_kumano_02.png" Width="180" Height="180" />
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="180" >
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="240" Height="180" Margin="0,0,0,18" >
                 <Image Source="ロゴ.png" Width="128" HorizontalAlignment="Left" Margin="0,8" />
                 <TextBlock x:Name="TitleView" Text="嫁時報アプリ" FontSize="24" FontFamily="Meiryo UI" FontWeight="Bold" Padding="0,8" Foreground="#FF424242" />
-                <TextBlock x:Name="Version" Text="version" FontFamily="Arial" Foreground="#FF616161"/>
-                <Rectangle Height="75" />
+                <TextBlock x:Name="Version" Text="version" FontFamily="Arial" Foreground="#FF616161" Margin="0,0,0,4"/>
+                <Rectangle Height="73" />
                 <TextBlock x:Name="Copyright" FontFamily="Arial" Text="CopyRight" FontSize="10" Foreground="#FF616161"/>
             </StackPanel>
         </StackPanel>
-        
+        <TextBlock x:Name="linksView" FontFamily="Arial" FontSize="10" Foreground="#FF757575" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="208,120,0,0">
+            <TextBlock Text="Project home:"/>
+            <Hyperlink
+                NavigateUri="https://cookie.kumano.moe/products/yome_notif.html"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                cookie.kumano.moe
+            </Hyperlink>
+            <LineBreak/>
+            <TextBlock Text="Source code: "/>
+            <Hyperlink
+                NavigateUri="https://github.com/Cookie-Kumano/Yome_Notif/"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                GitHub
+            </Hyperlink>
+            <LineBreak/>
+            <TextBlock Text="Developer: "/>
+            <Hyperlink
+                NavigateUri="https://mstdn.y-zu.org/@Cookie"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                Cookie
+            </Hyperlink>
+        </TextBlock>
+
+        <TextBlock x:Name="licenseView" FontFamily="Arial" FontSize="10" Foreground="#FF757575" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="208,0,0,26">
+            <TextBlock Text="嫁時報アプリ is OSS released under "/>
+            <Hyperlink
+                NavigateUri="https://github.com/Cookie-Kumano/Yome_Notif/blob/master/LICENSE"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                The MIT License.
+            </Hyperlink>
+        </TextBlock>
     </Grid>
 </Window>
