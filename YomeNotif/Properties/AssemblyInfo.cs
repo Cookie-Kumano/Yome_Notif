@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("瑞鳳ぷろだくしょん")]
 [assembly: AssemblyProduct("YomeNotif")]
-[assembly: AssemblyCopyright("Copyright ©  Zuiho-Production 2020")]
+[assembly: AssemblyCopyright("Designed by Zuiho-Production 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
