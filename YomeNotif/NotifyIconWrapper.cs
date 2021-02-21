@@ -28,16 +28,16 @@ namespace YomeNotif
             this.toolStripMenuItem_Open.Click += this.toolStripMenuItem_Open_Click;
             this.toolStripMenuItem_Exit.Click += this.toolStripMenuItem_Exit_Click;
 
+            // 時報管理xmlファイルの有無を確認、無かったらメインウィンドウを出して促す
+            if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\YomeNotif\YomeDB.xml")) {
+                notifyIcon1.BalloonTipTitle = "はじめまして";
+                notifyIcon1.BalloonTipText = "まず、時報の設定をしましょう！";
+                notifyIcon1.ShowBalloonTip(3000);
+                showWindow();
+            }
+            
             if (Properties.Settings.Default.Ziho)
             {
-                /**
-                var type = ToastTemplateType.ToastText01;
-                var content = ToastNotificationManager.GetTemplateContent(type);
-                var text = content.GetElementsByTagName("text").First();
-                text.AppendChild(content.CreateTextNode("Toast"));
-                var notifier = ToastNotificationManager.CreateToastNotifier("Microsoft.Windows.Computer");
-                notifier.Show(new ToastNotification(content));
-                **/
                 notifyIcon1.BalloonTipTitle = "時報は有効です";
                 notifyIcon1.BalloonTipText = "毎時間、艦娘が時間をお知らせします。";
                 notifyIcon1.ShowBalloonTip(3000);

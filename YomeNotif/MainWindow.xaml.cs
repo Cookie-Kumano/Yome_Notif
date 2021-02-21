@@ -229,19 +229,25 @@ namespace YomeNotif
         // データベース照会処理。
         private void ReadDatabase()
         {
-            string[,] data = objDB.GetYomeList();
-
-            for (int i = 0; i < data.GetLength(0); i++)
+            if (!objDB.isExistsYomeList())
             {
-                _dtos.Add(new Dto(data[i, 1], data[i, 0]));
+                // 初回起動と思われるのでチュートリアルを表示
+            } else
+            {
+                string[,] data = objDB.GetYomeList();
+
+                for (int i = 0; i < data.GetLength(0); i++)
+                {
+                    _dtos.Add(new Dto(data[i, 1], data[i, 0]));
+                }
+                Yome_List.ItemsSource = _dtos;
             }
-            Yome_List.ItemsSource = _dtos;
         }
 
         // 設定ボタンクリック時
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] data = { _dtos.First().FileName, _dtos.First().Name, "TEST\nTEST\nTEST\nTEST\nTEST" };
+            string[] data = { "", "なまえ", "TEST\nTEST\nTEST\nTEST\nTEST" };
 
             var f = new SettingsWindow(data);
             f.Show();
