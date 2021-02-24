@@ -18,7 +18,9 @@ namespace YomeNotif
         DatabaseWrapper objDB = new DatabaseWrapper();
 
         string[,] Zihodata = new string[24, 2];
+        Dto DtoData = null;
         int selectedTime;
+
 
         public MainWindow()
         {
@@ -127,7 +129,6 @@ namespace YomeNotif
         // 音声・テキストの保存処理
         private bool SubmitNotifList(string dataType, string data)
         {
-            var DtoData = (Dto)Yome_List.SelectedItem;
             if (DtoData != null && Ziho_List.SelectedIndex > -1)
             {
                 string msgstring = "";
@@ -169,8 +170,8 @@ namespace YomeNotif
         // 嫁リストの選択対象が変わったときの処理
         private void Yome_List_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var DtoData = (Dto)Yome_List.SelectedItem;
-            if (DtoData != null)
+            DtoData = (Dto)Yome_List.SelectedItem;
+            if ((DtoData != null))
             {
                 SettingsTitle.Text = "「" + DtoData.Name + "」の時報設定";
                 Ziho_List.IsEnabled = true;
@@ -192,7 +193,7 @@ namespace YomeNotif
             }
             else
             {
-                SettingsTitle.Text = "時報設定する艦娘を選択してください";
+                SettingsTitle.Text = "時報設定するキャラクターを選択してください";
                 Ziho_List.IsEnabled = false;
                 VoiceEditButton.IsEnabled = false;
                 TextEditBox.IsEnabled = false;
@@ -247,6 +248,7 @@ namespace YomeNotif
         // 設定ボタンクリック時
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
+            // ここなんとかしろ
             string[] data = { "", "なまえ", "TEST\nTEST\nTEST\nTEST\nTEST" };
 
             var f = new SettingsWindow(data);

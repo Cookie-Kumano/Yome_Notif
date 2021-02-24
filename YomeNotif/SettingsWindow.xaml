@@ -9,16 +9,16 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Width="360" Height="360">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Margin="16" VerticalAlignment="Center" Width="320">
-            <Label HorizontalAlignment="Left" FontSize="14" Content="全般設定" />
+            <Label FontSize="14" Content="全般設定" Padding="4,0,0,0" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,8">
-                <CheckBox x:Name="EnableZiho" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-                <TextBlock Text="時報を有効にする" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0,0,0" />
+                <CheckBox x:Name="EnableZiho" Content="時報を有効にする" Margin="8,0,0,0" Padding="8,0,0,0" />
+                <!-- <TextBlock Text="時報を有効にする" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0,0,0" /> -->
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,8">
-                <CheckBox x:Name="PlayVoice" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-                <TextBlock Text="通知で音声を鳴らす" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0,0,0" />
+                <CheckBox x:Name="PlayVoice" Content="通知で音声を鳴らす" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0,0,0" Padding="8,0,0,0" />
+                <!-- <TextBlock Text="通知で音声を鳴らす" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0,0,0" /> -->
             </StackPanel>
-            <Button x:Name="TestNotif" Content="通知をテスト" Click="TestNotif_Click" />
+            <Button x:Name="TestNotif" Content="通知をテスト" Click="TestNotif_Click" Margin="4,0,0,0" />
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,8" HorizontalAlignment="Right">
                 <Button x:Name="CancelButton" Content="キャンセル" Padding="8,1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4" Click="CancelButton_Click"/>
                 <Button x:Name="OKButton" Content="適用" Padding="8,1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4" Click="OKButton_Click"/>

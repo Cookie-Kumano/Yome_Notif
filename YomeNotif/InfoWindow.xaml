@@ -11,7 +11,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="sd_kumano_02.png" Width="180" Height="180" />
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="240" Height="180" Margin="0,0,0,18" >
-                <Image Source="ロゴ.png" Width="128" HorizontalAlignment="Left" Margin="0,8" />
+                <Image Source="zuiho-logo.png" Width="128" HorizontalAlignment="Left" Margin="0,8" />
                 <TextBlock x:Name="TitleView" Text="嫁時報アプリ" FontSize="24" FontFamily="Meiryo UI" FontWeight="Bold" Padding="0,8" Foreground="#FF424242" />
                 <TextBlock x:Name="Version" Text="version" FontFamily="Arial" Foreground="#FF616161" Margin="0,0,0,4"/>
                 <Rectangle Height="73" />

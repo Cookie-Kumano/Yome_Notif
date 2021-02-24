@@ -12,11 +12,11 @@
             <Label Content="名前を入力" FontSize="14"/>
             <TextBox x:Name="NameInput" Height="36" TextWrapping="Wrap" VerticalContentAlignment="Center" Padding="4" Margin="8,4,8,8"/>
             <Label Content="画像ファイルを選択" FontSize="14"/>
-            <StackPanel Height="32" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="474" Margin="4,0,0,0">
+            <StackPanel Height="38" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Width="474" Margin="4,0,0,0">
                 <Button x:Name="ImgButton" Content="ファイルを選択" Width="128" Margin="4" Click="ImgButton_Click"/>
-                <Label x:Name="PathView" Content="..." />
+                <Label x:Name="PathView" Content="..." VerticalAlignment="Center" />
             </StackPanel>
-            <Button x:Name="SubmitButton" Click="SubmitButton_Click" Content="決定" Margin="8" Height="32" FontSize="14"/>
+            <Button x:Name="SubmitButton" Click="SubmitButton_Click" Content="決定" Margin="8" Height="32" FontSize="14" HorizontalAlignment="Stretch"/>
 
         </StackPanel>
 
