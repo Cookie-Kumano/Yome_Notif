@@ -54,7 +54,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>sd_kumano_02.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\sd_kumano_02.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
@@ -174,7 +174,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sd_kumano_02.png" />
+    <Resource Include="Resources\sd_kumano_02.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -189,7 +189,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sd_kumano_02.ico" />
+    <Resource Include="Resources\sd_kumano_02.ico" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Costura.Fody">
@@ -217,13 +217,16 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="edit.png" />
+    <Resource Include="Resources\button_edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="delete.png" />
+    <Resource Include="Resources\button_delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="zuiho-logo.png" />
+    <Resource Include="Resources\zuiho-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\graph_kumano.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

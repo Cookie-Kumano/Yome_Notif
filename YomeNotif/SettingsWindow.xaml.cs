@@ -9,19 +9,16 @@ namespace YomeNotif
     {
         string[] _data = new string[3];
 
-        public SettingsWindow(string[] data)
+        public SettingsWindow()
         {
             InitializeComponent();
+
+            // 既存の設定内容を当てる
             if (Properties.Settings.Default.Ziho)
                 EnableZiho.IsChecked = true;
             if (Properties.Settings.Default.Voice)
                 PlayVoice.IsChecked = true;
-
-            _data[0] = data[0];
-            _data[1] = data[1];
-            _data[2] = data[2];
-            if (data[0] == "" || data[1] == "" || data[2] == "")
-                TestNotif.IsEnabled = false;
+            
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
@@ -44,7 +41,8 @@ namespace YomeNotif
 
         private void TestNotif_Click(object sender, RoutedEventArgs e)
         {
-            var window = new NotifWindow(_data);
+            // テスト通知を発火
+            var window = new NotifWindow(new string[] { "TEST", "熊野", "通知テスト" });
             window.Show();
         }
     }

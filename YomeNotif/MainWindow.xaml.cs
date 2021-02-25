@@ -248,10 +248,7 @@ namespace YomeNotif
         // 設定ボタンクリック時
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            // ここなんとかしろ
-            string[] data = { "", "なまえ", "TEST\nTEST\nTEST\nTEST\nTEST" };
-
-            var f = new SettingsWindow(data);
+            var f = new SettingsWindow();
             f.Show();
         }
 

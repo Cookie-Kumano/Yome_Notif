@@ -44,11 +44,15 @@ namespace YomeNotif
             }
         }
 
+        // UIを組み立てる
         public void notifFire(string ImageFile, string Name, string Text)
         {
-            // UIを組み立てる
-            if (File.Exists(ImageFile))
+            // 画像ファイルの存在を確認したうえで表示
+            if (File.Exists(ImageFile) && !ImageFile.Equals("TEST"))
                 ImageView.ImageSource = new BitmapImage(new Uri(ImageFile));
+            else if (ImageFile.Equals("TEST"))
+                ImageView.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/graph_kumano.jpg"));
+
             NameView.Text = Name;
             TextView.Text = Text;
 
