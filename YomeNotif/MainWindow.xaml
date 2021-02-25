@@ -8,7 +8,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="嫁時報設定" Icon="sd_kumano_02.png" Height="480" ResizeMode="NoResize" Width="760" WindowStartupLocation="CenterScreen">
+        Title="嫁時報設定" Height="480" ResizeMode="NoResize" Width="760" WindowStartupLocation="CenterScreen">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
@@ -47,11 +47,11 @@
                                                 DockPanel.Dock="Right">
                                         <Button Width="24" Height="24" Background="#00DDDDDD" Padding="0" Margin="4"
                                                 Click="UpdateButton_Click">
-                                            <Image Source="edit.png" />
+                                            <Image Source="Resources/button_edit.png" />
                                         </Button>
                                         <Button Width="24" Height="24" Background="#00DDDDDD" Padding="0" Margin="4"
                                                 Click="DeleteButton_Click">
-                                            <Image Source="delete.png" />
+                                            <Image Source="Resources/button_delete.png" />
                                         </Button>
                                     </StackPanel>
                                 </DockPanel>
